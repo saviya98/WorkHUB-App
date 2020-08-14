@@ -1,3 +1,17 @@
 <resources>
     <string name="app_name">WorkHUB-App</string>
+    <string name="nameSignUp">Name</string>
+    <string name="emailSignUp">Email</string>
+    <string name="phoneSignUp">Phone</string>
+    <string name="passwordSignUp">Password</string>
+    <string-array name="industrySignup">
+        <item>Industry Type</item>
+        <item>Painting</item>
+        <item>Wood Working</item>
+    </string-array>
+    <string name="indiSignUp">Individual</string>
+    <string name="companySignUp">Company</string>
+    <string name="signUpBtn">Sing Up</string>
+    <string name="alreadymem">Already a member:</string>
+    <string name="login">Log In</string>
 </resources>
