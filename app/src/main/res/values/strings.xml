@@ -14,4 +14,19 @@
     <string name="signUpBtn">Sing Up</string>
     <string name="alreadymem">Already a member:</string>
     <string name="login">Log In</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nameProfile">Name</string>
+    <string name="emailProfile">Email</string>
+    <string name="phoneProfile">Phone</string>
+    <string name="passwordProfile">Password</string>
+    <string name="textProf1">Basic Info</string>
+    <string name="textProf2">Work Info</string>
+    <string name="comNameProfile">Company Name</string>
+    <string-array name="locationProfile"><item>Location</item></string-array>
+    <string-array name="cateProfile"><item>Category</item></string-array>
+    <string-array name="servicesProfile"><item>Services</item></string-array>
+    <string name="rateProfile">Hourly Rate</string>
+    <string name="updateBtn">Update Profile</string>
+    <string name="deleteBtn">Delete Profile</string>
 </resources>

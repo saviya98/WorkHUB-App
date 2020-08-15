@@ -3,7 +3,9 @@ package com.example.workhub_app;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,6 +20,12 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Sign Up on WorkHUB");
 
+
+    }
+
+    public void navigateProfile(View view){
+        Intent intent = new Intent(MainActivity.this,Worker_Profile.class);
+        startActivity(intent);
     }
 
 
