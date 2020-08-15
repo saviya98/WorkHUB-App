@@ -23,10 +23,41 @@
     <string name="textProf1">Basic Info</string>
     <string name="textProf2">Work Info</string>
     <string name="comNameProfile">Company Name</string>
-    <string-array name="locationProfile"><item>Location</item></string-array>
-    <string-array name="cateProfile"><item>Category</item></string-array>
-    <string-array name="servicesProfile"><item>Services</item></string-array>
+    <string name="locationProfile">Location</string>
+    <string-array name="locationProfileArray">
+        <item>Malabe</item>
+        <item>Kaduwela</item>
+    </string-array>
+    <string name="cateProfile">Category</string>
+    <string-array name="cateProfileArray">
+        <item>Painting</item>
+        <item>Wood Working</item>
+        <item>Metal Working</item>
+    </string-array>
+    <string name="serviceProfile">Services</string>
+    <string-array name="servicesProfileArray">
+        <item></item>
+    </string-array>
     <string name="rateProfile">Hourly Rate</string>
     <string name="updateBtn">Update Profile</string>
     <string name="deleteBtn">Delete Profile</string>
+    <string name="desHeadReqPreview">Description</string>
+    <string name="conHeadReqPreview">Contact Info</string>
+    <string name="msgHeadReqPreview">Message</string>
+    <string name="msgInReqPreview">Enter Message</string>
+    <string name="reqPreviewBtn">Accept Job</string>
+    <string name="conNameReqPreview">Name</string>
+    <string name="conNameDetailReqPreview">Kamla Perera</string>
+    <string name="conPhoneReqPreview">Phone</string>
+    <string name="conPhoneDetailReqPreview">0774859621</string>
+    <string name="conPhoneSearchPreview">0774859621</string>
+    <string name="conEmailHeadSearchPreview">Email</string>
+    <string name="conEmailSearchPreview">abcsupp@gmail.com</string>
+    <string name="conAddressReqPreview">Address</string>
+    <string name="conAddressDetailReqPreview">897/2 Park Rd, Malabe</string>
+    <string name="conAddreSearchPreview">897/2 Park Rd, Malabe</string>
+    <string name="contactWorkerBtn">Contact Me</string>
+    <string name="desReqPreview">Full House paint ( 2 bedrooms) lorem
+ipsmlorem ipsm lorem ipsm lorem
+ipsm lorem Ilorem ipsmlorem ipsm.</string>
 </resources>

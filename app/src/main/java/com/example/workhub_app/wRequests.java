@@ -1,5 +1,7 @@
 package com.example.workhub_app;
 
+import android.content.Intent;
+import android.icu.text.Transliterator;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +9,10 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -46,6 +52,8 @@ public class wRequests extends Fragment {
         return fragment;
     }
 
+    ListView listView;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,12 +61,35 @@ public class wRequests extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_w_requests, container, false);
+        View view = inflater.inflate(R.layout.fragment_w_requests, container, false);
+        final String Requests[] = {"Paint Job","House Paint","Door Color"};
+
+        ArrayAdapter arrayAdapter = new ArrayAdapter<String>(getContext(), R.layout.single_request_raw,R.id.reqHead,Requests);
+
+        listView = view.findViewById(R.id.list_req_view);
+        listView.setAdapter(arrayAdapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                if(i==0){
+                    Toast.makeText(getContext(),"Loading",Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(view.getContext(),Worker_Request_Preview.class);
+                    startActivity(intent);
+
+
+                }
+            }
+        });
+
+        return view;
     }
 }

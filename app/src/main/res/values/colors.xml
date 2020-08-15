@@ -5,4 +5,5 @@
     <color name="colorAccent">#03DAC5</color>
     <color name="custompurple">#2E1572</color>
     <color name="customwhite">#ffffff</color>
+    <color name="customBlack">#1A1A1A</color>
 </resources>
