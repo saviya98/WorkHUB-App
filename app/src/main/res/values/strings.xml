@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">adverticePro</string>
+    <string name="head">Projects</string>
+    <string name="newP">New Projects</string>
+    <string name="viewP">View Projects</string>
+    <string name="myP">My Projects</string>
+    <string name="npHead">I am a</string>
+    <string name="npbtn">Next</string>
+    <string name="ftxt1">Form</string>
+    <string name="fName">Name</string>
+    <string name="fNumber">Mobile Number</string>
+    <string name="fDetails">Project Details</string>
+    <string name="fSubmit">Submit</string>
+    <string name="myPro">My Projects</string>
+    <string name="myProBtn1">Update</string>
+    <string name="myProBtn2">Delete</string>
+    <string name="viewPro">Select a type</string>
+    <string name="viewProBtn">View</string>
+
+    <string-array name="names">
+        <item>Customer</item>
+        <item>Worker</item>
+        <item>Supplier</item>
+    </string-array>
+
+    <string-array name="namess">
+        <item>Customer projects</item>
+        <item>Worker projects</item>
+        <item>Supplier projects</item>
+    </string-array>
+
+</resources>
