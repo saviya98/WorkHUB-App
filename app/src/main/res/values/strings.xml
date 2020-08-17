@@ -1,0 +1,44 @@
+<resources>
+    <string name="app_name">WorkHUB-App</string>
+    <string name="address">Address</string>
+    <string name="mail">Email</string>
+    <string name="tel">Phone</string>
+    <string name="companyname">Company Name</string>
+    <string name="ownername">Owner Name</string>
+    <string name="create">Create An Account</string>
+    <string name="pw">Password</string>
+    <string name="enterun">Enter your UserName/email</string>
+    <string name="pwenter">Enter your Password</string>
+    <string name="acclogin">Log-In to Your Account</string>
+    <string name="logbtn">Log-In</string>
+    <string name="butname1">Home</string>
+    <string name="butname2">My Account</string>
+    <string name="butname3">Add Items</string>
+    <string name="btnSign">Sign Up</string>
+    <string name="already">Already have an Account?:</string>
+    <string name="login">Log In</string>
+    <string name="search">Search Suppliers and Items</string>
+    <string name="itemname1">Concrete Mixture</string>
+    <string name="itemprice">1200-Per Day</string>
+    <string name="Details">View Details</string>
+    <string name="itemnameadd">Enter Item Name</string>
+    <string name="itempic">Insert a picture</string>
+    <string name="des">Description</string>
+    <string name="price">Price Per Day</string>
+    <string name="add">Add this item</string>
+    <string name="acc">Supplier Account</string>
+    <string name="delacc">Delete Account</string>
+    <string name="editacc">Edit Account</string>
+    <string name="viewItem">Added Items</string>
+    <string name="yourprof">Edit Your Profile</string>
+    <string name="savecha">Save Changes</string>
+    <string name="edit">Edit</string>
+    <string name="del">Delete</string>
+    <string name="added">Added Items</string>
+
+    <string name="detilC">ABC Company</string>
+    <string name="detilO">abcd egjds</string>
+    <string name="detiladd">123/f,gudg,gsjs</string>
+    <string name="detilM">abcdegjds@gmail.com</string>
+    <string name="detilT">011263527</string>
+</resources>
