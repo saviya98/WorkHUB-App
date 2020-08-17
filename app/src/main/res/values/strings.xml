@@ -1,61 +1,34 @@
 <resources>
-    <string name="app_name">WorkHUB-App</string>
-    <string name="nameSignUp">Name</string>
-    <string name="emailSignUp">Email</string>
-    <string name="phoneSignUp">Phone</string>
-    <string name="passwordSignUp">Password</string>
+    <string name="app_name">WorkHUB-App</string><string name="nameSignUp">Name</string><string name="emailSignUp">Email</string>
+    <string name="phoneSignUp">Phone</string><string name="passwordSignUp">Password</string>
     <string-array name="industrySignup">
         <item>Industry Type</item>
         <item>Painting</item>
         <item>Wood Working</item>
-    </string-array>
-    <string name="indiSignUp">Individual</string>
-    <string name="companySignUp">Company</string>
-    <string name="signUpBtn">Sing Up</string>
-    <string name="alreadymem">Already a member:</string>
-    <string name="login">Log In</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="nameProfile">Name</string>
-    <string name="emailProfile">Email</string>
-    <string name="phoneProfile">Phone</string>
-    <string name="passwordProfile">Password</string>
-    <string name="textProf1">Basic Info</string>
-    <string name="textProf2">Work Info</string>
-    <string name="comNameProfile">Company Name</string>
-    <string name="locationProfile">Location</string>
+    </string-array><string name="indiSignUp">Individual</string><string name="companySignUp">Company</string>
+    <string name="signUpBtn">Sing Up</string><string name="alreadymem">Already a member:</string>
+    <string name="login">Log In</string><string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nameProfile">Name</string><string name="emailProfile">Email</string>
+    <string name="phoneProfile">Phone</string><string name="passwordProfile">Password</string><string name="textProf1">Basic Info</string>
+    <string name="textProf2">Work Info</string><string name="comNameProfile">Company Name</string><string name="locationProfile">Location</string>
     <string-array name="locationProfileArray">
         <item>Malabe</item>
         <item>Kaduwela</item>
-    </string-array>
-    <string name="cateProfile">Category</string>
-    <string-array name="cateProfileArray">
+    </string-array><string name="cateProfile">Category</string><string-array name="cateProfileArray">
         <item>Painting</item>
         <item>Wood Working</item>
         <item>Metal Working</item>
-    </string-array>
-    <string name="serviceProfile">Services</string>
+    </string-array><string name="serviceProfile">Services</string>
     <string-array name="servicesProfileArray">
         <item></item>
-    </string-array>
-    <string name="rateProfile">Hourly Rate</string>
-    <string name="updateBtn">Update Profile</string>
-    <string name="deleteBtn">Delete Profile</string>
-    <string name="desHeadReqPreview">Description</string>
-    <string name="conHeadReqPreview">Contact Info</string>
-    <string name="msgHeadReqPreview">Message</string>
-    <string name="msgInReqPreview">Enter Message</string>
-    <string name="reqPreviewBtn">Accept Job</string>
-    <string name="conNameReqPreview">Name</string>
-    <string name="conNameDetailReqPreview">Kamla Perera</string>
-    <string name="conPhoneReqPreview">Phone</string>
-    <string name="conPhoneDetailReqPreview">0774859621</string>
-    <string name="conPhoneSearchPreview">0774859621</string>
-    <string name="conEmailHeadSearchPreview">Email</string>
-    <string name="conEmailSearchPreview">abcsupp@gmail.com</string>
-    <string name="conAddressReqPreview">Address</string>
-    <string name="conAddressDetailReqPreview">897/2 Park Rd, Malabe</string>
-    <string name="conAddreSearchPreview">897/2 Park Rd, Malabe</string>
+    </string-array><string name="rateProfile">Hourly Rate</string><string name="updateBtn">Update Profile</string><string name="deleteBtn">Delete Profile</string>
+    <string name="desHeadReqPreview">Description</string><string name="conHeadReqPreview">Contact Info</string>
+    <string name="msgHeadReqPreview">Message</string><string name="msgInReqPreview">Enter Message</string>
+    <string name="reqPreviewBtn">Accept Job</string><string name="conNameReqPreview">Name</string><string name="conNameDetailReqPreview">Kamla Perera</string>
+    <string name="conPhoneReqPreview">Phone</string><string name="conPhoneDetailReqPreview">0774859621</string>
+    <string name="conPhoneSearchPreview">0774859621</string><string name="conEmailHeadSearchPreview">Email</string>
+    <string name="conEmailSearchPreview">abcsupp@gmail.com</string><string name="conAddressReqPreview">Address</string>
+    <string name="conAddressDetailReqPreview">897/2 Park Rd, Malabe</string><string name="conAddreSearchPreview">897/2 Park Rd, Malabe</string>
     <string name="contactWorkerBtn">Contact Me</string>
     <string name="desReqPreview">Full House paint ( 2 bedrooms) lorem
 ipsmlorem ipsm lorem ipsm lorem
