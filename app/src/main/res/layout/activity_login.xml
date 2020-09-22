@@ -38,7 +38,7 @@
             tools:layout_editor_absoluteY="0dp" />
 
         <Button
-            android:id="@+id/btnlogin"
+            android:id="@+id/btnlogin1"
             android:layout_width="173dp"
             android:layout_height="49dp"
             android:layout_marginStart="16dp"
@@ -56,11 +56,11 @@
 
         <EditText
             android:id="@+id/un"
-            android:layout_width="349dp"
-            android:layout_height="51dp"
+            android:layout_width="358dp"
+            android:layout_height="54dp"
             android:ems="10"
+            android:hint="@string/enterun"
             android:inputType="textPersonName"
-            android:text="@string/enterun"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.363"
@@ -70,23 +70,26 @@
 
         <EditText
             android:id="@+id/pwenter"
-            android:layout_width="349dp"
-            android:layout_height="38dp"
+            android:layout_width="361dp"
+            android:layout_height="55dp"
             android:ems="10"
             android:hint="@string/pwenter"
             android:inputType="textPassword"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.375"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/include"
-            app:layout_constraintVertical_bias="0.564" />
+            app:layout_constraintVertical_bias="0.575" />
 
         <TextView
             android:id="@+id/logintext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/acclogin"
+            android:textColor="@color/design_default_color_on_secondary"
             android:textSize="24sp"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.147"
@@ -94,7 +97,7 @@
             app:layout_constraintTop_toTopOf="@+id/include"
             app:layout_constraintVertical_bias="0.306" />
 
-<!--        <TextView-->
+        <!--        <TextView-->
 <!--            android:id="@+id/textView"-->
 <!--            android:layout_width="wrap_content"-->
 <!--            android:layout_height="wrap_content"-->

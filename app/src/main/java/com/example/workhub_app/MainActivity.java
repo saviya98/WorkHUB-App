@@ -1,45 +1,52 @@
 package com.example.workhub_app;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import java.net.PasswordAuthentication;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Toolbar toolbar;
+
+    Button btnSup;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-//        toolbar = findViewById(R.id.signUpToolBar);
-//        setSupportActionBar(toolbar);
-//        getSupportActionBar().setTitle("Sign Up on WorkHUB");
+        btnSup = findViewById(R.id.supBtn);
 
-    }
-
-    Button btnlog;
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-
-        btnlog = findViewById(R.id.login);
-        btnlog.setOnClickListener(new View.OnClickListener() {
+        btnSup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, login.class);
+                Intent intent = new Intent(MainActivity.this,supplierRegister.class);
                 startActivity(intent);
-
             }
         });
 
-
     }
+
+
+
+
 }
