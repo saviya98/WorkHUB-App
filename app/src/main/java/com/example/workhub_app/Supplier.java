@@ -6,8 +6,17 @@ public class Supplier {
     private String address;
     private String email;
     private String pw;
+    private String phone;
 
     public Supplier() {}
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
 
     public String getCompanyName() {
         return companyName;

@@ -22,6 +22,11 @@ public class login extends AppCompatActivity {
     EditText unlog , pw;
     FirebaseAuth fbd;
 
+    public void clearControlls(){
+        unlog.setText("");
+        pw.setText("");
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,9 +70,10 @@ public class login extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(), "Login is successful...!",Toast.LENGTH_SHORT).show();
                             Intent logintent = new Intent(login.this,supplierHomeFrag.class);
                             startActivity(logintent);
+                            clearControlls();
                         }
                         else{
-                            Toast.makeText(getApplicationContext(),"Error...!"+task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(),"Error...!"+task.getException().getMessage(),Toast.LENGTH_LONG).show();
                         }
                     }
                 });

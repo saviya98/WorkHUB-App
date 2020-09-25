@@ -18,13 +18,16 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class supplierRegister extends AppCompatActivity {
 
-    EditText cname, oname, addname, mail, pw;
+    EditText cname, oname, addname, mail, pw,phone;
     Button btnSign;
     FirebaseAuth fdbAuth;
     Supplier sup;
+    DatabaseReference dbDetails;
 
     private void clearControlls() {
         cname.setText("");
@@ -32,6 +35,7 @@ public class supplierRegister extends AppCompatActivity {
         addname.setText("");
         mail.setText("");
         pw.setText("");
+        phone.setText("");
     }
 
 
@@ -45,6 +49,7 @@ public class supplierRegister extends AppCompatActivity {
         addname = findViewById(R.id.add);
         mail = findViewById(R.id.un);
         pw = findViewById(R.id.pwenter);
+        phone = findViewById(R.id.phn);
 
         btnSign = findViewById(R.id.btnlogin1);
         fdbAuth = FirebaseAuth.getInstance();
@@ -55,8 +60,12 @@ public class supplierRegister extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                String email = mail.getText().toString().trim();
+                final String email = mail.getText().toString().trim();
                 String pw1 = pw.getText().toString().trim();
+                final String comname = cname.getText().toString().trim();
+                final String owner = oname.getText().toString().trim();
+                final String add = addname.getText().toString().trim();
+                final String phone1 = phone.getText().toString().trim();
 
                 if (TextUtils.isEmpty(mail.getText().toString())) {
                     Toast.makeText(getApplicationContext(), "Please Enter an E-mail", Toast.LENGTH_SHORT).show();
@@ -67,9 +76,30 @@ public class supplierRegister extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(), "Please Enter a password", Toast.LENGTH_SHORT).show();
                     return;
                 }
+                if(TextUtils.isEmpty(cname.getText().toString())){
+                    Toast.makeText(getApplicationContext(), "Please Enter a Company Name", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(TextUtils.isEmpty(oname.getText().toString())){
+                    Toast.makeText(getApplicationContext(), "Please Enter an Owner Name", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(TextUtils.isEmpty(addname.getText().toString())){
+                    Toast.makeText(getApplicationContext(), "Please Enter the Address", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if(TextUtils.isEmpty(phone.getText().toString())){
+                    Toast.makeText(getApplicationContext(), "Please Enter the Phone Number", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 if (pw1.length() < 6) {
                     pw.setError("Password must be >= 6 characters");
+                    return;
+                }
+
+                if (phone1.length() < 10) {
+                    pw.setError("Enter a valid number");
                     return;
                 }
 
@@ -80,14 +110,47 @@ public class supplierRegister extends AppCompatActivity {
 
                         //checks whether registration is successful or nor
                         if (task.isSuccessful()) {
-                            successMsg();
+
+                            //display a toast msg if login credentials are created
+                            Toast.makeText(getApplicationContext(),"Login credentials are created",Toast.LENGTH_SHORT).show();
+
+                            //save supplier details
+                            dbDetails = FirebaseDatabase.getInstance().getReference().child("Supplier_Details");
+
+                            sup.setCompanyName(comname);
+                            sup.setOwnerName(owner);
+                            sup.setAddress(add);
+                            sup.setEmail(email);
+                            sup.setPhone(phone1);
+
+                            //insert to db
+                            dbDetails.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(sup).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    if(task.isSuccessful())
+                                        successMsg();
+                                    else
+                                        Toast.makeText(getApplicationContext(),"Error...!" + task.getException().getMessage(),Toast.LENGTH_LONG).show();
+                                }
+                            });
+
+
                             clearControlls();
+
                         } else {
-                            Toast.makeText(getApplicationContext(), "Somethinh is went wrong.Please check all the fields & try again" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getApplicationContext(), "Something is went wrong.Please check all the fields & try again" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
 
                     }
                 });
+
+
+
+
+
+
+
+
 
             }
         });

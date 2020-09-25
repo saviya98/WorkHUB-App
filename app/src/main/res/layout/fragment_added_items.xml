@@ -22,7 +22,7 @@
         tools:context=".supplierhome">
 
         <Button
-            android:id="@+id/viewDetills12"
+            android:id="@+id/viewDetills"
             android:layout_width="111dp"
             android:layout_height="30dp"
             android:background="@drawable/button"

@@ -52,4 +52,5 @@
     <string name="cus">User</string>
     <string name="sup">Supplier</string>
     <string name="work">Worker</string>
+    <string name="phn">Phone Number</string>
 </resources>
