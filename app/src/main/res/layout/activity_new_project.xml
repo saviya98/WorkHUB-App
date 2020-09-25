@@ -9,40 +9,51 @@
 
     <TextView
         android:id="@+id/nProHead"
-        android:layout_width="140dp"
-        android:layout_height="50dp"
+        android:layout_width="117dp"
+        android:layout_height="52dp"
         android:text="@string/npHead"
         android:textColor="#0B0808"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.247"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.152" />
 
-    <Spinner
-        android:id="@+id/spinner1"
-        android:layout_width="285dp"
-        android:layout_height="71dp"
-        android:background="#C8ABFA"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <Button
+        android:id="@+id/btnNewCustomer"
+        android:layout_width="195dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="110dp"
+        android:onClick="newPro"
+        android:text="@string/newCustomer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.401" />
+        app:layout_constraintTop_toBottomOf="@+id/nProHead" />
 
     <Button
-        android:id="@+id/nProBtn"
-        android:layout_width="153dp"
-        android:layout_height="52dp"
-        android:background="#f2c9fb"
-        android:text="@string/npbtn"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/btnNewWorker"
+        android:layout_width="195dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="80dp"
+        android:onClick="newPro"
+        android:text="@string/newWorker"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.704" />
+        app:layout_constraintTop_toBottomOf="@+id/btnNewCustomer" />
+
+    <Button
+        android:id="@+id/btnNewSuplier"
+        android:layout_width="195dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="80dp"
+        android:onClick="newPro"
+        android:text="@string/newSuplier"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnNewWorker" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

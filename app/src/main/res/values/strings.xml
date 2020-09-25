@@ -16,17 +16,13 @@
     <string name="myProBtn2">Delete</string>
     <string name="viewPro">Select a type</string>
     <string name="viewProBtn">View</string>
+    <string name="newCustomer">Customer</string>
+    <string name="newWorker">Worker</string>
+    <string name="newSuplier">Suplier</string>
+    <string name="supPro">Suplier Projects</string>
+    <string name="workpro">Worker Projects</string>
+    <string name="cusPro">Customer Projects</string>
 
-    <string-array name="names">
-        <item>Customer</item>
-        <item>Worker</item>
-        <item>Supplier</item>
-    </string-array>
 
-    <string-array name="namess">
-        <item>Customer projects</item>
-        <item>Worker projects</item>
-        <item>Supplier projects</item>
-    </string-array>
 
 </resources>
