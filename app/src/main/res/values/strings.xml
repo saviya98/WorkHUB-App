@@ -1,0 +1,129 @@
+<resources>
+    <string name="app_name">WorkHUB-App</string>
+    <string name="address">Address</string>
+    <string name="mail">Email</string>
+    <string name="tel">Phone</string>
+    <string name="companyname">Company Name</string>
+    <string name="ownername">Owner Name</string>
+    <string name="create">Create An Account</string>
+    <string name="pw">Password</string>
+    <string name="enterun">Enter your UserName/email</string>
+    <string name="pwenter">Enter your Password</string>
+    <string name="acclogin">Log-In to Your Account</string>
+    <string name="logbtn">Log-In</string>
+    <string name="butname1">Home</string>
+    <string name="butname2">My Account</string>
+    <string name="butname3">Add Items</string>
+    <string name="btnSign">Sign Up</string>
+    <string name="already">Already have an Account?:</string>
+    <string name="login">Log In</string>
+    <string name="search">Search Suppliers and Items</string>
+    <string name="itemname1">Concrete Mixture</string>
+    <string name="itemprice">1200-Per Day</string>
+    <string name="Details">View Details</string>
+    <string name="itemnameadd">Enter Item Name</string>
+    <string name="itempic">Insert a picture</string>
+    <string name="des">Description</string>
+    <string name="price">Price Per Day</string>
+    <string name="add">Add this item</string>
+    <string name="acc">Supplier Account</string>
+    <string name="delacc">Delete Account</string>
+    <string name="editacc">Edit Account</string>
+    <string name="viewItem">Added Items</string>
+    <string name="yourprof">Edit Your Profile</string>
+    <string name="savecha">Save Changes</string>
+    <string name="edit">Edit</string>
+    <string name="del">Delete</string>
+    <string name="added">Added Items</string>
+
+    <string name="detilC">ABC Company</string>
+    <string name="detilO">abcd egjds</string>
+    <string name="detiladd">123/f,gudg,gsjs</string>
+    <string name="detilM">abcdegjds@gmail.com</string>
+    <string name="detilT">011263527</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragments">Hello blank fragment</string>
+    <string name="congr">Congratulations........!</string>
+    <string name="successmsg">Your Account is Created</string>
+    <string name="loginEx">Log in to Explore</string>
+    <string name="len"><![CDATA[Password length >= 6 Characters]]></string>
+    <string name="editItem">Edit Item</string>
+    <string name="welcome">Welcome To WorkHub</string>
+    <string name="cus">User</string>
+    <string name="sup">Supplier</string>
+    <string name="work">Worker</string>
+    <string name="nameSignUp">Name</string>
+    <string name="emailSignUp">Email</string>
+    <string name="phoneSignUp">Phone</string>
+    <string name="passwordSignUp">Password</string>
+    <string-array name="industrySignup">
+        <item>Industry Type</item>
+        <item>Painting</item>
+        <item>Wood Working</item>
+    </string-array>
+    <string name="indiSignUp">Individual</string>
+    <string name="companySignUp">Company</string>
+    <string name="signUpBtn">Sign Up</string>
+    <string name="alreadymem">Already a member:</string>
+    <string name="loginn">Log In</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="nameProfile">Name</string>
+    <string name="emailProfile">Email</string>
+    <string name="phoneProfile">Phone</string>
+    <string name="passwordProfile">Password</string>
+    <string name="textProf1">Basic Info</string>
+    <string name="textProf2">Work Info</string>
+    <string name="comNameProfile">Company Name</string>
+    <string name="locationProfile">Location</string>
+    <string-array name="locationProfileArray">
+        <item>Malabe</item>
+        <item>Kaduwela</item>
+    </string-array>
+    <string name="cateProfile">Category</string>
+    <string-array name="cateProfileArray">
+        <item>Painting</item>
+        <item>Wood Working</item>
+        <item>Metal Working</item>
+    </string-array>
+    <string name="serviceProfile">Services</string>
+    <string-array name="servicesProfileArray">
+        <item></item>
+    </string-array>
+    <string name="rateProfile">Hourly Rate</string>
+    <string name="updateBtn">Update Profile</string>
+    <string name="deleteBtn">Delete Profile</string>
+    <string name="desHeadReqPreview">Description</string>
+    <string name="conHeadReqPreview">Contact Info</string>
+    <string name="msgHeadReqPreview">Message</string>
+    <string name="msgInReqPreview">Enter Message</string>
+    <string name="reqPreviewBtn">Accept Job</string>
+    <string name="conNameReqPreview">Name</string>
+    <string name="conNameDetailReqPreview">Kamla Perera</string>
+    <string name="conPhoneReqPreview">Phone</string>
+    <string name="conPhoneDetailReqPreview">0774859621</string>
+    <string name="conPhoneSearchPreview">0774859621</string>
+    <string name="conEmailHeadSearchPreview">Email</string>
+    <string name="conEmailSearchPreview">abcsupp@gmail.com</string>
+    <string name="conAddressReqPreview">Address</string>
+    <string name="conAddressDetailReqPreview">897/2 Park Rd, Malabe</string>
+    <string name="conAddreSearchPreview">897/2 Park Rd, Malabe</string>
+    <string name="contactWorkerBtn">Contact Me</string>
+    <string name="desReqPreview">Full House paint ( 2 bedrooms) lorem
+ipsmlorem ipsm lorem ipsm lorem
+ipsm lorem Ilorem ipsmlorem ipsm.</string>
+    <string name="IndustType">Industry Type</string>
+    <string name="workerSignin">Hello Worker</string>
+    <string name="txtsignInEmail">Enter your Email</string>
+    <string name="txtSignInPass">Enter your Password</string>
+    <string name="btnWorkSignIn">Sign In</string>
+    <string name="smallBtnlogin">Log in</string>
+    <string name="workerLogout">Logout</string>
+    <string name="locationWorkerP">City</string>
+    <string name="CateWorkP">Industry Type</string>
+    <string name="seviceWorkP">Offering Services</string>
+    <string name="txtcomNameW">Company Name</string>
+    <string name="hrateWorkerProf">Hourly Rate</string>
+    <string name="addWorkInfo">Add details</string>
+    <string name="updateWorkinfo">update details</string>
+    <string name="btnAddWork">Add work info</string>
+</resources>
