@@ -21,7 +21,7 @@
         app:layout_constraintVertical_bias="0.067" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputEditText"
+        android:id="@+id/formName"
         android:layout_width="330dp"
         android:layout_height="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -32,7 +32,7 @@
         app:layout_constraintVertical_bias="0.262" />
 
     <com.google.android.material.textfield.TextInputEditText
-        android:id="@+id/textInputEditText2"
+        android:id="@+id/formProDetails"
         android:layout_width="333dp"
         android:layout_height="89dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -85,10 +85,11 @@
         app:layout_constraintVertical_bias="0.604" />
 
     <Button
-        android:id="@+id/fBtn"
+        android:id="@+id/btnSubmit"
         android:layout_width="160dp"
         android:layout_height="50dp"
 
+        android:onClick="sub"
         android:text="@string/fSubmit"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -99,7 +100,7 @@
         app:layout_constraintVertical_bias="0.874" />
 
     <EditText
-        android:id="@+id/editTextPhone"
+        android:id="@+id/formPhone"
         android:layout_width="330dp"
         android:layout_height="48dp"
         android:ems="10"
