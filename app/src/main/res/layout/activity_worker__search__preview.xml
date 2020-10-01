@@ -7,7 +7,7 @@
     android:background="@drawable/back2"
     tools:context=".Worker_Search_Preview">
 
-
+    <include layout="@layout/signuponworkhub"/>
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
@@ -36,7 +36,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
     <TextView
-        android:id="@+id/textView20"
+        android:id="@+id/wstxtPhone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="51dp"
@@ -62,7 +62,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView19" />
 
     <TextView
-        android:id="@+id/textView22"
+        android:id="@+id/wstxtEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="46dp"
@@ -88,9 +88,9 @@
         app:layout_constraintTop_toBottomOf="@+id/textView21" />
 
     <TextView
-        android:id="@+id/textView24"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/wstxtAddress"
+        android:layout_width="191dp"
+        android:layout_height="59dp"
         android:layout_marginStart="27dp"
         android:layout_marginEnd="67dp"
         android:fontFamily="@font/robotoregular"
