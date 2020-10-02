@@ -26,14 +26,20 @@ public class newProject extends AppCompatActivity {
 
 
 
-
-
-
     public void newPro(View view){
-        Intent intent = new Intent(this, form.class);
-        startActivity(intent);
+        Intent cintent = new Intent(this, form.class);
+        startActivity(cintent);
     }
 
+    public void supNewPro(View view){
+        Intent sintent = new Intent(this, Supplier_form.class);
+        startActivity(sintent);
+    }
+
+    public void workerNewPro(View view){
+        Intent wintent = new Intent(this, Worker_form.class);
+        startActivity(wintent);
+    }
 
 
 }

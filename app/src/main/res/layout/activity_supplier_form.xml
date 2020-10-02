@@ -9,9 +9,9 @@
 
     <TextView
         android:id="@+id/fTxt1"
-        android:layout_width="283dp"
-        android:layout_height="57dp"
-        android:text="Customer Form"
+        android:layout_width="252dp"
+        android:layout_height="60dp"
+        android:text="@string/supplierForm"
         android:textSize="40sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

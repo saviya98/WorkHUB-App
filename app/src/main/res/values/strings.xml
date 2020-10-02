@@ -22,7 +22,8 @@
     <string name="supPro">Suplier Projects</string>
     <string name="workpro">Worker Projects</string>
     <string name="cusPro">Customer Projects</string>
-
+    <string name="workerForm">Worker Form</string>
+    <string name="supplierForm">Supplier Form</string>
 
 
 </resources>

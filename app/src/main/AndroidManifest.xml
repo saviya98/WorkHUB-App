@@ -9,8 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".projects"></activity>
-        <activity android:name=".viewProject"></activity>
+        <activity android:name=".Worker_form"></activity>
+        <activity android:name=".Supplier_form" />
+        <activity android:name=".projects" />
+        <activity android:name=".viewProject" />
         <activity android:name=".myProjects" />
         <activity android:name=".form" />
         <activity android:name=".newProject" />
