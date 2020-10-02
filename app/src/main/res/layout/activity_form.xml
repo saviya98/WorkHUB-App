@@ -89,7 +89,6 @@
         android:layout_width="160dp"
         android:layout_height="50dp"
 
-        android:onClick="sub"
         android:text="@string/fSubmit"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"

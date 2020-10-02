@@ -2,14 +2,13 @@ package com.example.adverticepro;
 
 import android.widget.EditText;
 
-public class customerProjects {
+public class CustomerProjects {
 
     private String cusName;
-    private int cusNumber;
+    private String cusNumber;
     private String proDetails;
 
-    public customerProjects() {
-
+    public CustomerProjects() {
     }
 
     public String getCusName() {
@@ -20,11 +19,11 @@ public class customerProjects {
         this.cusName = cusName;
     }
 
-    public int getCusNumber() {
+    public String getCusNumber() {
         return cusNumber;
     }
 
-    public void setCusNumber(int cusNumber) {
+    public void setCusNumber(String cusNumber) {
         this.cusNumber = cusNumber;
     }
 

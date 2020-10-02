@@ -23,6 +23,12 @@ public class newProject extends AppCompatActivity {
         btnSuplier = findViewById(R.id.btnNewSuplier);
     }
 
+
+
+
+
+
+
     public void newPro(View view){
         Intent intent = new Intent(this, form.class);
         startActivity(intent);
