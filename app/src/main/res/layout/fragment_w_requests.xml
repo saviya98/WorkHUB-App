@@ -9,15 +9,12 @@
     android:background="@drawable/back2"
     tools:context=".wRequests">
 
-
-    <ListView
-        android:id="@+id/list_req_view"
-        android:layout_width="373dp"
-        android:layout_height="539dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:divider="@color/customBlack"
-        android:dividerHeight="1dp"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/wReqRecView"
+        android:layout_width="match_parent"
+        android:layout_height="554dp"
+        android:layout_marginTop="93dp"
+        android:layout_marginBottom="84dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

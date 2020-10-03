@@ -26,9 +26,17 @@ import com.google.firebase.database.ValueEventListener;
 public class workInfo extends Fragment {
 
     EditText cName,location,services,hRate;
-    Button add,update;
+    Button add,update,delete;
 
-    WorkerDetails workerDetails;
+    WorkerWInfo wInfo;
+
+    private void clearControls(){
+        cName.setText("");
+        location.setText("");
+        services.setText("");
+        hRate.setText("");
+
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -52,15 +60,17 @@ public class workInfo extends Fragment {
 
         add = getActivity().findViewById(R.id.workInfoAddDetail);
         update = getActivity().findViewById(R.id.workInfoUpdateDetail);
+        delete = getActivity().findViewById(R.id.workInfoDeleteDetails);
 
-        workerDetails = new WorkerDetails();
+        wInfo = new WorkerWInfo();
+
 
         //retrieve data from database
-        DatabaseReference showDB = FirebaseDatabase.getInstance().getReference().child("Worker_Details").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        DatabaseReference showDB = FirebaseDatabase.getInstance().getReference().child("Worker_Work_Info").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
         showDB.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if(dataSnapshot.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).hasChildren()) {
+                if(dataSnapshot.hasChildren()) {
                     cName.setText(dataSnapshot.child("companyName").getValue().toString());
                     location.setText(dataSnapshot.child("location").getValue().toString());
                     services.setText(dataSnapshot.child("services").getValue().toString());
@@ -81,7 +91,7 @@ public class workInfo extends Fragment {
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                DatabaseReference addDB  = FirebaseDatabase.getInstance().getReference().child("Worker_Details");
+                DatabaseReference addDB  = FirebaseDatabase.getInstance().getReference().child("Worker_Work_Info");
 
                 String comName = cName.getText().toString().trim();
                 String loc = location.getText().toString().trim();
@@ -101,12 +111,12 @@ public class workInfo extends Fragment {
                     Toast.makeText(getActivity(), "Hourly Rate Required", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    workerDetails.setCompanyName(comName);
-                    workerDetails.setLocation(loc);
-                    workerDetails.setServices(servi);
-                    workerDetails.sethRate(rate);
+                    wInfo.setCompanyName(comName);
+                    wInfo.setLocation(loc);
+                    wInfo.setServices(servi);
+                    wInfo.sethRate(rate);
 
-                    addDB.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).push().setValue(workerDetails);
+                    addDB.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(wInfo);
 
                     Toast.makeText(getActivity(), "Work Info Added", Toast.LENGTH_SHORT).show();
                 }
@@ -116,40 +126,62 @@ public class workInfo extends Fragment {
         update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String comName = cName.getText().toString().trim();
-                final String loc = location.getText().toString().trim();
-                final String servi = services.getText().toString().trim();
-                final String rate = hRate.getText().toString().trim();
-
-                final DatabaseReference[] updateDB = {FirebaseDatabase.getInstance().getReference().child("Worker_Details").child(FirebaseAuth.getInstance().getCurrentUser().getUid())};
-                updateDB[0].addListenerForSingleValueEvent(new ValueEventListener() {
+                DatabaseReference updateDB = FirebaseDatabase.getInstance().getReference().child("Worker_Work_Info");
+                updateDB.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if(dataSnapshot.hasChild(FirebaseAuth.getInstance().getCurrentUser().getUid())){
-                            workerDetails.setCompanyName(comName);
-                            workerDetails.setLocation(loc);
-                            workerDetails.setServices(servi);
-                            workerDetails.sethRate(rate);
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if (snapshot.hasChild(FirebaseAuth.getInstance().getCurrentUser().getUid())){
+                            wInfo.setCompanyName(cName.getText().toString().trim());
+                            wInfo.setServices(services.getText().toString().trim());
+                            wInfo.setLocation(location.getText().toString().trim());
+                            wInfo.sethRate(hRate.getText().toString().trim());
 
-                            updateDB[0] = FirebaseDatabase.getInstance().getReference().child("Worker_Details").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
-                                    .child(FirebaseAuth.getInstance().getCurrentUser().getUid());
-                            updateDB[0].setValue(workerDetails);
+                            DatabaseReference upRef = FirebaseDatabase.getInstance().getReference().child("Worker_Work_Info").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                            upRef.setValue(wInfo);
 
-                            Toast.makeText(getActivity(), "Updated", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getActivity(), "Data Updated...", Toast.LENGTH_SHORT).show();
+
                         }
-                        else {
-                            Toast.makeText(getActivity(), "Error while updating", Toast.LENGTH_SHORT).show();
-                        }
+                        else
+                            Toast.makeText(getActivity(), "Error...", Toast.LENGTH_SHORT).show();
                     }
 
                     @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                    public void onCancelled(@NonNull DatabaseError error) {
 
                     }
                 });
-
             }
         });
+
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DatabaseReference deleteDB = FirebaseDatabase.getInstance().getReference().child("Worker_Work_Info");
+                deleteDB.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if (snapshot.hasChild(FirebaseAuth.getInstance().getCurrentUser().getUid())){
+                            DatabaseReference delDB = FirebaseDatabase.getInstance().getReference().child("Worker_Work_Info").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                            delDB.removeValue();
+
+                            clearControls();
+
+                            Toast.makeText(getActivity(), "Work Info Deleted Successfully.", Toast.LENGTH_SHORT).show();
+                        }
+                        else
+                            Toast.makeText(getActivity(), "Error...", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+            }
+        });
+
+
 
 
 

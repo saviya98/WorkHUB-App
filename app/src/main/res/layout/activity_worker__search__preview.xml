@@ -108,69 +108,38 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="52dp"
         android:fontFamily="@font/robotobolditalic"
-        android:text="Services"
+        android:text="Items"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView23" />
 
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="7dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="23dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView25"
-        app:srcCompat="@android:drawable/dialog_frame" />
-
-    <TextView
-        android:id="@+id/textView27"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="241dp"
-        android:text="House Painting"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView5"
-        app:layout_constraintTop_toBottomOf="@+id/textView25" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="7dp"
-        android:layout_height="16dp"
-        android:layout_marginStart="60dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5"
-        app:srcCompat="@android:drawable/dialog_frame" />
-
-    <TextView
-        android:id="@+id/textView28"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="288dp"
-        android:text="Roofing"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView6"
-        app:layout_constraintTop_toBottomOf="@+id/textView27" />
-
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btnWorkerContact"
         android:layout_width="179dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="188dp"
+        android:layout_marginTop="30dp"
         android:background="@drawable/button"
         android:fontFamily="@font/cairolight"
         android:text="@string/contactWorkerBtn"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.445"
+        app:layout_constraintHorizontal_bias="0.448"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView28" />
+        app:layout_constraintTop_toBottomOf="@+id/wSearchItemPrewRec" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/wSearchItemPrewRec"
+        android:layout_width="409dp"
+        android:layout_height="247dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/btnWorkerContact"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView25" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

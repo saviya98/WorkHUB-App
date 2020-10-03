@@ -94,7 +94,7 @@
     <string name="deleteBtn">Delete Profile</string>
     <string name="desHeadReqPreview">Description</string>
     <string name="conHeadReqPreview">Contact Info</string>
-    <string name="msgHeadReqPreview">Message</string>
+    <string name="msgHeadReqPreview">Projects</string>
     <string name="msgInReqPreview">Enter Message</string>
     <string name="reqPreviewBtn">Accept Job</string>
     <string name="conNameReqPreview">Name</string>
@@ -104,7 +104,7 @@
     <string name="conPhoneSearchPreview">0774859621</string>
     <string name="conEmailHeadSearchPreview">Email</string>
     <string name="conEmailSearchPreview">abcsupp@gmail.com</string>
-    <string name="conAddressReqPreview">Address</string>
+    <string name="conAddressReqPreview">Email</string>
     <string name="conAddressDetailReqPreview">897/2 Park Rd, Malabe</string>
     <string name="conAddreSearchPreview">897/2 Park Rd, Malabe</string>
     <string name="contactWorkerBtn">Contact Me</string>
@@ -126,4 +126,10 @@ ipsm lorem Ilorem ipsmlorem ipsm.</string>
     <string name="addWorkInfo">Add details</string>
     <string name="updateWorkinfo">update details</string>
     <string name="btnAddWork">Add work info</string>
+    <string name="hratetxtwork">Hourly Rate</string>
+    <string name="workInDelbtn">delete details</string>
+    <string name="projDetail">Project Details</string>
+    <string name="approxWdate">Approx Date</string>
+    <string name="wDailywage">Daily Wage</string>
+    <string name="telWproj">Phone</string>
 </resources>

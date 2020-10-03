@@ -8,23 +8,15 @@
     android:layout_height="wrap_content"
     >
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="93dp"
-        android:layout_height="match_parent"
-        android:paddingBottom="3dp"
-        android:paddingTop="3dp"
-        app:srcCompat="@drawable/ic_proimage"
-        tools:ignore="VectorDrawableCompat" />
 
     <TextView
         android:id="@+id/reqHead"
-        android:layout_width="wrap_content"
+        android:layout_width="338dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="TextView"
-        android:padding="20sp"
         android:fontFamily="@font/robotoregular"
+        android:padding="20sp"
+        android:text="TextView"
         android:textColor="@color/customBlack"
         android:textSize="25sp" />
 

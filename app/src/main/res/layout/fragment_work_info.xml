@@ -96,11 +96,11 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="27dp"
         android:layout_marginTop="32dp"
-        android:text="TextView"
+        android:text="@string/hrateWorkerProf"
         android:textSize="18dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView33"
-        tools:text="@string/hrateWorkerProf" />
+        tools:text="@string/hratetxtwork" />
 
     <EditText
         android:id="@+id/workInfoHrate"
@@ -117,13 +117,14 @@
         android:id="@+id/workInfoAddDetail"
         android:layout_width="153dp"
         android:layout_height="42dp"
-        android:layout_marginTop="61dp"
+        android:layout_marginTop="60dp"
         android:background="@drawable/button"
         android:fontFamily="@font/cairolight"
         android:text="@string/addWorkInfo"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/workInfoUpdateDetail"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/workInfoHrate" />
@@ -132,14 +133,28 @@
         android:id="@+id/workInfoUpdateDetail"
         android:layout_width="153dp"
         android:layout_height="42dp"
-        android:layout_marginTop="37dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="48dp"
         android:background="@drawable/button"
         android:fontFamily="@font/cairolight"
         android:text="@string/updateWorkinfo"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintTop_toBottomOf="@+id/workInfoHrate" />
+
+    <Button
+        android:id="@+id/workInfoDeleteDetails"
+        android:layout_width="153dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="27dp"
+        android:text="@string/workInDelbtn"
+        android:background="@drawable/button"
+        android:fontFamily="@font/cairolight"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/workInfoAddDetail" />
 

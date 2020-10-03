@@ -63,6 +63,7 @@ public class wProfile extends Fragment {
 
 
         update = getActivity().findViewById(R.id.btnWorkerProfUpdate);
+        delete = getActivity().findViewById(R.id.btnWorkerProfDelete);
 
 
         worker = new WorkerDetails();
@@ -115,6 +116,31 @@ public class wProfile extends Fragment {
                         }
                     }
                 });
+            }
+        });
+
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               DatabaseReference deleteDB = FirebaseDatabase.getInstance().getReference().child("Worker_Details");
+               deleteDB.addListenerForSingleValueEvent(new ValueEventListener() {
+                   @Override
+                   public void onDataChange(@NonNull DataSnapshot snapshot) {
+                       if(snapshot.hasChild(FirebaseAuth.getInstance().getCurrentUser().getUid())){
+                           DatabaseReference dbref = FirebaseDatabase.getInstance().getReference().child("Worker_Details").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                           dbref.removeValue();
+                           Toast.makeText(getActivity(), "Account Deleted", Toast.LENGTH_SHORT).show();
+                       }
+                       else {
+                           Toast.makeText(getActivity(), "No data to delete", Toast.LENGTH_SHORT).show();
+                       }
+                   }
+
+                   @Override
+                   public void onCancelled(@NonNull DatabaseError error) {
+
+                   }
+               });
             }
         });
 
