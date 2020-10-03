@@ -1,22 +1,28 @@
 package com.example.workhub_app;
 
+import android.content.Intent;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
-
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -25,11 +31,15 @@ import com.google.firebase.database.FirebaseDatabase;
  */
 public class addItemFr extends Fragment {
 
-    EditText iname, ides,iprice;
+    private static  final  int CAMERA_REQUEST = 1888;
+
+    EditText iname, ides,iprice , discount;
     Button addbtn,addimage;
     DatabaseReference dbf;
     ImageView imageView;
-
+    private static final int GALLERY_REQUEST =1;
+    Uri imgUrl;
+    StorageReference reference;
 
     Item item = new Item();
 
@@ -41,18 +51,30 @@ public class addItemFr extends Fragment {
 
 
 
+
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
 
-
+        reference = FirebaseStorage.getInstance().getReference().child("Item").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
         iname = getActivity().findViewById(R.id.itemName);
         ides = getActivity().findViewById(R.id.desI);
         iprice = getActivity().findViewById(R.id.priceI);
         addbtn = getActivity().findViewById(R.id.addit);
         addimage = getActivity().findViewById(R.id.picinsert);
         imageView = getActivity().findViewById(R.id.imageButton);
+
+
+        addimage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent cameraIntent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(cameraIntent, CAMERA_REQUEST);
+            }
+        });
+
+
 
         addbtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,19 +84,24 @@ public class addItemFr extends Fragment {
                  String itemN = iname.getText().toString().trim();
                  String description = ides.getText().toString().trim();
                  String  price = iprice.getText().toString().trim();
+                 String dis = discount.getText().toString().trim();
 
 
                 if(TextUtils.isEmpty(iname.getText().toString()))
                     Toast.makeText(getActivity(),"Please Enter a Item Name", Toast.LENGTH_SHORT).show();
-                else if(TextUtils.isEmpty(ides.getText().toString()))
+                if(TextUtils.isEmpty(ides.getText().toString()))
                     Toast.makeText(getActivity(),"Please Enter a description", Toast.LENGTH_SHORT).show();
-                else if(TextUtils.isEmpty(iprice.getText().toString()))
+                if(TextUtils.isEmpty(iprice.getText().toString()))
                     Toast.makeText(getActivity(),"Please the price of the product", Toast.LENGTH_SHORT).show();
+                if(TextUtils.isEmpty(discount.getText().toString()))
+                    Toast.makeText(getActivity(),"Please the discount Amount", Toast.LENGTH_SHORT).show();
+
                 else{
                     //take inputs
                     item.setName(itemN);
                     item.setDescription(description);
                     item.setPrice(price);
+
 
                     //insert to db
                     dbf.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).push().setValue(item);
@@ -90,6 +117,19 @@ public class addItemFr extends Fragment {
         });
 
 
+    }
+
+
+
+        @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == CAMERA_REQUEST ){
+
+            Bitmap photo = (Bitmap) data.getExtras().get("data");
+            imageView.setImageBitmap(photo);
+        }
     }
 
     @Override

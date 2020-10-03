@@ -9,6 +9,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -21,6 +22,7 @@ public class login extends AppCompatActivity {
     Button btnlogin;
     EditText unlog , pw;
     FirebaseAuth fbd;
+    ProgressBar progressBar;
 
     public void clearControlls(){
         unlog.setText("");
@@ -36,6 +38,7 @@ public class login extends AppCompatActivity {
         unlog = findViewById(R.id.un);
         pw = findViewById(R.id.pwenter);
         fbd = FirebaseAuth.getInstance();
+        progressBar= findViewById(R.id.progressBar);
 
         btnlogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,6 +64,7 @@ public class login extends AppCompatActivity {
                     return;
                 }
 
+                progressBar.setVisibility(View.VISIBLE);
                 //authenticate the user
                 fbd.signInWithEmailAndPassword(email,pw1).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override

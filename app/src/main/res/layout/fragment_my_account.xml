@@ -174,44 +174,30 @@
 
         <Button
             android:id="@+id/editAcc"
-            android:layout_width="167dp"
-            android:layout_height="38dp"
+            android:layout_width="270dp"
+            android:layout_height="40dp"
             android:background="@drawable/button"
             android:text="@string/editacc"
             android:textColor="@color/design_default_color_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.942"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.899" />
+            app:layout_constraintVertical_bias="0.852" />
 
         <Button
-            android:id="@+id/delAcc"
-            android:layout_width="164dp"
-            android:layout_height="38dp"
+            android:id="@+id/advertbtn"
+            android:layout_width="266dp"
+            android:layout_height="37dp"
             android:background="@drawable/button"
-            android:text="@string/delacc"
-            android:textColor="@color/design_default_color_background"
+            android:text="@string/advertise"
+            android:textColor="@color/cardview_light_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.069"
+            app:layout_constraintHorizontal_bias="0.496"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.899" />
-
-        <Button
-            android:id="@+id/viewitem"
-            android:layout_width="251dp"
-            android:layout_height="43dp"
-            android:background="@drawable/button"
-            android:text="@string/viewItem"
-            android:textColor="@color/design_default_color_background"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.816" />
+            app:layout_constraintVertical_bias="0.933" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

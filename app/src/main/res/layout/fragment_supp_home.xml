@@ -9,6 +9,7 @@
     <!-- TODO: Update blank fragment layout -->
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/myhome"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/background"
@@ -18,54 +19,28 @@
             android:id="@+id/serchTh"
             android:layout_width="368dp"
             android:layout_height="52dp"
+            android:background="@color/common_google_signin_btn_text_dark_disabled"
             android:queryHint="@string/search"
-            android:tag="@string/search"
             android:visibility="visible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.48"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.042" />
+            app:layout_constraintVertical_bias="0.042"
+            tools:visibility="visible" />
 
-        <TextView
-            android:id="@+id/itamname1"
-            android:layout_width="218dp"
-            android:layout_height="30dp"
-            android:text="@string/itemname1"
-            android:textSize="24sp"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recview"
+            android:layout_width="377dp"
+            android:layout_height="520dp"
+            android:layout_marginTop="2dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.828"
+            app:layout_constraintHorizontal_bias="0.461"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.154" />
-
-        <ImageView
-            android:id="@+id/imageView10"
-            android:layout_width="97dp"
-            android:layout_height="80dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.081"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.151"
-            app:srcCompat="@android:drawable/ic_menu_gallery" />
-
-        <Button
-            android:id="@+id/viewItembtn"
-            android:layout_width="123dp"
-            android:layout_height="29dp"
-            android:background="@drawable/button"
-            android:text="@string/Details"
-            android:textColor="@color/cardview_light_background"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.792"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.208" />
+            app:layout_constraintTop_toBottomOf="@+id/serchTh"
+            app:layout_constraintVertical_bias="0.407" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

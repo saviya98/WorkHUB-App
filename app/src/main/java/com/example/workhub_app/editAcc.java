@@ -1,6 +1,7 @@
 package com.example.workhub_app;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -8,11 +9,13 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -31,24 +34,52 @@ import com.google.firebase.database.ValueEventListener;
  */
 public class editAcc extends Fragment {
 
+    private static final int CAMERA_REQUEST = 1888;
+
+    ImageView proPic;
+    EditText txt1,txt2,txt3,txt4,txt5;
+    Button save,uploadPro;
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == CAMERA_REQUEST){
+            Bitmap pho = (Bitmap) data.getExtras().get("data");
+            proPic.setImageBitmap(pho);
+        }
+
+    }
+
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        final EditText txt1,txt2,txt3,txt4,txt5;
-        Button save;
+
 
         txt1 = getActivity().findViewById(R.id.editcom);
         txt2 = getActivity().findViewById(R.id.editowner);
         txt3 = getActivity().findViewById(R.id.editadd);
         txt4 = getActivity().findViewById(R.id.editmail);
         txt5 = getActivity().findViewById(R.id.editNumber);
+        proPic = getActivity().findViewById(R.id.propic);
+        uploadPro = getActivity().findViewById(R.id.inspic);
 
         final Supplier supEdit;
 
         supEdit =  new Supplier();
 
         save = getActivity().findViewById(R.id.editbtnsave);
+
+        uploadPro.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent cameraIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(cameraIntent, CAMERA_REQUEST);
+            }
+        });
+
+
 
         DatabaseReference readdb = FirebaseDatabase.getInstance().getReference().child("Supplier_Details").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
         readdb.addListenerForSingleValueEvent(new ValueEventListener() {

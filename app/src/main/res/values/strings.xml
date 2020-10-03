@@ -53,4 +53,7 @@
     <string name="sup">Supplier</string>
     <string name="work">Worker</string>
     <string name="phn">Phone Number</string>
+    <string name="advertise">Advertise Board</string>
+    <string name="priceN">Price</string>
+    <string name="dis">Discount</string>
 </resources>

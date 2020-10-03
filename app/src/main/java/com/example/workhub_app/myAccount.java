@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,12 +33,13 @@ import com.google.firebase.database.ValueEventListener;
 public class myAccount extends Fragment {
 
 
+    private static final String TAG = "myAccount";
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
         final TextView txt1,txt2,txt3,txt4,txt5;
-        final Button btnDel;
+
 
         txt1 = getActivity().findViewById(R.id.txtC6);
         txt2 = getActivity().findViewById(R.id.txtC7);
@@ -45,7 +47,7 @@ public class myAccount extends Fragment {
         txt4 = getActivity().findViewById(R.id.txtC9);
         txt5 = getActivity().findViewById(R.id.txtC10);
 
-        btnDel = getActivity().findViewById(R.id.delAcc);
+
 
         final DatabaseReference readdb = FirebaseDatabase.getInstance().getReference().child("Supplier_Details").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
         readdb.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -71,34 +73,6 @@ public class myAccount extends Fragment {
             }
         });
 
-        btnDel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                final DatabaseReference delDB = FirebaseDatabase.getInstance().getReference().child("Supplier_Details").child(FirebaseAuth.getInstance().getCurrentUser().getUid());;
-                delDB.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if(dataSnapshot.child("Supplier_Details").hasChild(FirebaseAuth.getInstance().getCurrentUser().getUid())){
-                            delDB.removeValue();
-
-                            Toast.makeText(getActivity(),"Account is deleted...!",Toast.LENGTH_SHORT).show();
-                        }
-                        else{
-                            Toast.makeText(getActivity(),"No source to delete",Toast.LENGTH_SHORT).show();
-                        }
-
-
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
-
-            }
-        });
 
     }
 
@@ -111,8 +85,9 @@ public class myAccount extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_my_account, container, false);
 
+
         Button editAcc = v.findViewById(R.id.editAcc);
-        Button editItem = v.findViewById(R.id.viewitem);
+
 
         editAcc.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -122,13 +97,7 @@ public class myAccount extends Fragment {
             }
         });
 
-        editItem.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentTransaction frtI = getFragmentManager().beginTransaction();
-                frtI.replace(R.id.myAcc, new addedItems()).commit();
-            }
-        });
+
         return v;
 
     }

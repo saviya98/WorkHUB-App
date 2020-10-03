@@ -5,6 +5,8 @@ public class Item {
     private String name;
     private String description;
     private String price;
+    private String imageUrl;
+
 
     public Item() {}
 
@@ -30,5 +32,14 @@ public class Item {
 
     public void setPrice(String price) {
         this.price = price;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }
