@@ -198,6 +198,18 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.933" />
+
+        <Button
+            android:id="@+id/logout"
+            android:layout_width="79dp"
+            android:layout_height="63dp"
+            android:background="@drawable/logout"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.692"
+            app:layout_constraintStart_toEndOf="@+id/acctext"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.022" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

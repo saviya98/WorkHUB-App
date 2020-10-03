@@ -84,7 +84,7 @@ public class addItemFr extends Fragment {
                  String itemN = iname.getText().toString().trim();
                  String description = ides.getText().toString().trim();
                  String  price = iprice.getText().toString().trim();
-                 String dis = discount.getText().toString().trim();
+
 
 
                 if(TextUtils.isEmpty(iname.getText().toString()))
@@ -93,8 +93,7 @@ public class addItemFr extends Fragment {
                     Toast.makeText(getActivity(),"Please Enter a description", Toast.LENGTH_SHORT).show();
                 if(TextUtils.isEmpty(iprice.getText().toString()))
                     Toast.makeText(getActivity(),"Please the price of the product", Toast.LENGTH_SHORT).show();
-                if(TextUtils.isEmpty(discount.getText().toString()))
-                    Toast.makeText(getActivity(),"Please the discount Amount", Toast.LENGTH_SHORT).show();
+
 
                 else{
                     //take inputs

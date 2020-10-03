@@ -12,7 +12,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.SearchView;
 import android.widget.TextView;
 
 //import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -42,12 +45,35 @@ public class suppHome extends Fragment {
     DatabaseReference dbR;
     RecyclerView recyclerView;
     myAdapter myadapter;
+    ArrayList<Item> items;
+    SearchView searchView;
+
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
         recyclerView = getActivity().findViewById(R.id.recview);
+
+        searchView = getActivity().findViewById(R.id.serchTh);
+
+        dbR = FirebaseDatabase.getInstance().getReference().child("Item");
+
+       searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+           @Override
+           public boolean onQueryTextSubmit(String s) {
+               search(s);
+               return false;
+           }
+
+           @Override
+           public boolean onQueryTextChange(String s) {
+               search(s);
+               return false;
+           }
+       });
+
+
 
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
@@ -62,7 +88,18 @@ public class suppHome extends Fragment {
 
    }
 
-   public void onStart(){
+    private void search(String s) {
+        FirebaseRecyclerOptions<Item> options =
+                new FirebaseRecyclerOptions.Builder<Item>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Item").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).orderByChild("name").startAt(s ).endAt(s+ "\uf8ff"), Item.class)
+                        .build();
+
+        myadapter = new myAdapter(options);
+        myadapter.startListening();
+        recyclerView.setAdapter(myadapter);
+    }
+
+    public void onStart(){
         super.onStart();
         myadapter.startListening();
    }
