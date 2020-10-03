@@ -16,7 +16,7 @@
         <activity android:name=".myProjects" />
         <activity android:name=".form" />
         <activity android:name=".newProject" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".AdvertiseHome">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
