@@ -1,0 +1,56 @@
+{
+  "project_info": {
+    "project_number": "110399930935",
+    "firebase_url": "https://workhub-app-b7cc0.firebaseio.com",
+    "project_id": "workhub-app-b7cc0",
+    "storage_bucket": "workhub-app-b7cc0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:110399930935:android:9ff76a827a4411dc0335b2",
+        "android_client_info": {
+          "package_name": "com.example.workhub_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "110399930935-sofvfijipedlnibsr4v02el3ajsmspto.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.workhub_app",
+            "certificate_hash": "572704dc436202c09c2b18fb45ecd613ff910bfb"
+          }
+        },
+        {
+          "client_id": "110399930935-ov3839p5rehlf8v80hjr08h85o3j7olc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.workhub_app",
+            "certificate_hash": "a71cf117fbbb44878c0fc4a14aea9c8fe6e6fa7f"
+          }
+        },
+        {
+          "client_id": "110399930935-ehconjjp4jl7onvfhdu0g7rclcg7p70s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAwGMQtJXvKxsC2m28bQr6d94mKMzGo2Mk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "110399930935-ehconjjp4jl7onvfhdu0g7rclcg7p70s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

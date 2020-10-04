@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.workhub_app">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".Target_my_proj"></activity>
+        <activity android:name=".cust_proj_my_proj" />
+        <activity android:name=".cust_activities" />
+        <activity
+            android:name=".cus_navigation"
+            android:label="@string/title_activity_cus_navigation" />
+        <activity android:name=".CustermerHome" />
+        <activity android:name=".CustomerProfile" />
+        <activity android:name=".customerWorks" />
+        <activity android:name=".customerlogin" />
+        <activity android:name=".customerRegister">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".supplierRegister" /> <!-- <activity android:name=".supplierHomeFrag" /> -->
+        <activity android:name=".login" /> <!-- <activity android:name=".FirstScreen" /> -->
+        <activity android:name=".MainActivity" />
+    </application>
+
+</manifest>

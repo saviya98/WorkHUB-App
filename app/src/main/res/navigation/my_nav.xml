@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav">
+
+    <fragment
+        android:id="@+id/suppHome"
+        android:name="com.example.workhub_app.suppHome"
+        android:label="fragment_supp_home"
+        tools:layout="@layout/fragment_supp_home" />
+    <fragment
+        android:id="@+id/addItemFr"
+        android:name="com.example.workhub_app.addItemFr"
+        android:label="fragment_add_item"
+        tools:layout="@layout/fragment_add_item" />
+    <fragment
+        android:id="@+id/myAccount"
+        android:name="com.example.workhub_app.myAccount"
+        android:label="fragment_my_account"
+        tools:layout="@layout/fragment_my_account" />
+
+</navigation>
