@@ -97,57 +97,40 @@ public class supplierRegister extends AppCompatActivity {
                     pw.setError("Password must be >= 6 characters");
                     return;
                 }
-
                 if (phone1.length() < 10) {
                     pw.setError("Enter a valid number");
                     return;
                 }
-
                 //register user in firebase
                 fdbAuth.createUserWithEmailAndPassword(email, pw1).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-
                         //checks whether registration is successful or nor
                         if (task.isSuccessful()) {
-
                             //display a toast msg if login credentials are created
                             Toast.makeText(getApplicationContext(),"Login credentials are created",Toast.LENGTH_SHORT).show();
-                            System.out.println("1 awoo");
                             //save supplier details
                             dbDetails = FirebaseDatabase.getInstance().getReference().child("Supplier_Details");
-                            System.out.println("2 awoo");
                             sup.setCompanyName(comname);
                             sup.setOwnerName(owner);
                             sup.setAddress(add);
                             sup.setEmail(email);
                             sup.setPhone(phone1);
-                            System.out.println("3 awoo");
-
                             //insert to db
                             dbDetails.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(sup).addOnCompleteListener(new OnCompleteListener<Void>() {
 
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
-                                    System.out.println("4 awoo");
                                     if(task.isSuccessful()) {
-                                        System.out.println("5 awoo");
                                         successMsg();
-                                        System.out.println("6 awoo");
                                     }else{
-                                        System.out.println("7 awoo");
                                         Toast.makeText(getApplicationContext(),"Error...!" + task.getException().getMessage(),Toast.LENGTH_LONG).show();
-                                        System.out.println("8 awoo");
                                 }}
                             });
-
-                            System.out.println("mama methana");
                             clearControlls();
-
                         } else {
                             Toast.makeText(getApplicationContext(), "Something is went wrong.Please check all the fields & try again" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
-
                     }
                 });
 

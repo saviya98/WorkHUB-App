@@ -46,24 +46,20 @@ public class login extends AppCompatActivity {
                 //validate email & password
                 String email = unlog.getText().toString().trim();
                 String pw1 = pw.getText().toString().trim();
-
                 if(TextUtils.isEmpty(unlog.getText().toString())) {
                     Toast.makeText(getApplicationContext(), "Please Enter an E-mail", Toast.LENGTH_SHORT).show();
                     unlog.setError("User-Name/E-mail is required");
                     return;
                 }
-
                 if(TextUtils.isEmpty(pw.getText().toString())) {
                     Toast.makeText(getApplicationContext(), "Please Enter a password", Toast.LENGTH_SHORT).show();
                     pw.setError("Password is required");
                     return;
                 }
-
                 if(pw1.length() < 6) {
                     pw.setError("Password must be >= 6 characters");
                     return;
                 }
-
                 progressBar.setVisibility(View.VISIBLE);
                 //authenticate the user
                 fbd.signInWithEmailAndPassword(email,pw1).addOnCompleteListener(new OnCompleteListener<AuthResult>() {

@@ -78,23 +78,12 @@ public class myAccount extends Fragment {
                     txt3.setText(dataSnapshot.child("address").getValue().toString());
                     txt4.setText(dataSnapshot.child("phone").getValue().toString());
                     txt5.setText(dataSnapshot.child("email").getValue().toString());
-
                 }
                 else
-                    Toast.makeText(getActivity(),"No Source to Display",Toast.LENGTH_SHORT).show();
-
-
-            }
-
+                    Toast.makeText(getActivity(),"No Source to Display",Toast.LENGTH_SHORT).show();         }
             @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-
-
-    }
-
+            public void onCancelled(@NonNull DatabaseError databaseError) {}
+        }); }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -103,11 +92,7 @@ public class myAccount extends Fragment {
         }
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_my_account, container, false);
-
-
         Button editAcc = v.findViewById(R.id.editAcc);
-
-
         editAcc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -115,7 +100,6 @@ public class myAccount extends Fragment {
                frt.replace(R.id.myAcc,new editAcc()).commit();
             }
         });
-
 
         return v;
 

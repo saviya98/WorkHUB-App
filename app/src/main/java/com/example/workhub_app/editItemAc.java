@@ -44,9 +44,7 @@ public class editItemAc extends AppCompatActivity {
         del = findViewById(R.id.delItem);
 
         final String key = getIntent().getStringExtra("KEY");
-
         System.out.println(key);
-
         dbItemRead = FirebaseDatabase.getInstance().getReference().child("Item").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child(key);
         dbItemRead.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -55,38 +53,25 @@ public class editItemAc extends AppCompatActivity {
                     txt1.setText(dataSnapshot.child("name").getValue().toString());
                     txt2.setText(dataSnapshot.child("description").getValue().toString());
                     txt3.setText(dataSnapshot.child("price").getValue().toString());
-
                 }
                 else {
                     Toast.makeText(getApplicationContext(),"No Source to Display",Toast.LENGTH_SHORT).show();
                 }
-
             }
-
             @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
+            public void onCancelled(@NonNull DatabaseError databaseError) {}
         });
-
-
-
         del.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 final DatabaseReference[] delDb = {FirebaseDatabase.getInstance().getReference().child("Item").child(FirebaseAuth.getInstance().getCurrentUser().getUid())};
-
                 delDb[0].addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         if(snapshot.hasChild(key)){
-
                             delDb[0] = FirebaseDatabase.getInstance().getReference().child("Item").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child(key);
                             delDb[0].removeValue();
-
                             Toast.makeText(getApplicationContext(),"Item is Deleted",Toast.LENGTH_SHORT).show();
-
                             Intent intent = new Intent(editItemAc.this,supplierHomeFrag.class);
                             startActivity(intent);
                         }
@@ -94,7 +79,6 @@ public class editItemAc extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(),"No source to delete",Toast.LENGTH_SHORT).show();
                         }
                     }
-
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
 
@@ -102,30 +86,23 @@ public class editItemAc extends AppCompatActivity {
                 });
             }
         });
-
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 final String iname = txt1.getText().toString().trim();
                 final String des = txt2.getText().toString().trim();
                 final String price = txt3.getText().toString().trim();
-
                 DatabaseReference dbUpdate = FirebaseDatabase.getInstance().getReference().child("Item");
-
                 item.setName(iname);
                 item.setDescription(des);
                 item.setPrice(price);
-
                 dbUpdate.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).child(key).setValue(item).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if(task.isSuccessful()){
                             Toast.makeText(getApplicationContext(),"Changes Are Saved..!",Toast.LENGTH_SHORT).show();
-
                             Intent intent = new Intent(editItemAc.this,supplierHomeFrag.class);
                             startActivity(intent);
-
                         }
                         else{
                             Toast.makeText(getApplicationContext(),"Error in updating..."+task.getException().getMessage(),Toast.LENGTH_LONG).show();

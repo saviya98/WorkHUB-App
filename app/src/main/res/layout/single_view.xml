@@ -15,6 +15,7 @@
             android:id="@+id/imgViewRec"
             android:layout_width="152dp"
             android:layout_height="142dp"
+            android:background="@drawable/ic_baseline_panorama_24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"

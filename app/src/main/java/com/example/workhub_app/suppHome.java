@@ -65,51 +65,38 @@ public class suppHome extends Fragment {
                search(s);
                return false;
            }
-
            @Override
            public boolean onQueryTextChange(String s) {
                search(s);
                return false;
            }
        });
-
-
-
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-
         FirebaseRecyclerOptions<Item> options =
                 new FirebaseRecyclerOptions.Builder<Item>()
                 .setQuery(FirebaseDatabase.getInstance().getReference().child("Item").child(FirebaseAuth.getInstance().getCurrentUser().getUid()), Item.class)
                 .build();
-
         myadapter = new myAdapter(options);
         recyclerView.setAdapter(myadapter);
-
-
    }
-
     private void search(String s) {
-        FirebaseRecyclerOptions<Item> options =
-                new FirebaseRecyclerOptions.Builder<Item>()
-                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Item").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).orderByChild("name").startAt(s ).endAt(s+ "\uf8ff"), Item.class)
+        FirebaseRecyclerOptions<Item> options =new FirebaseRecyclerOptions.Builder<Item>()
+        .setQuery(FirebaseDatabase.getInstance().getReference().child("Item").child(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                .orderByChild("name").startAt(s ).endAt(s+ "\uf8ff"), Item.class)
                         .build();
-
         myadapter = new myAdapter(options);
         myadapter.startListening();
         recyclerView.setAdapter(myadapter);
     }
-
     public void onStart(){
         super.onStart();
         myadapter.startListening();
    }
-
     @Override
     public void onStop() {
         super.onStop();
         myadapter.stopListening();
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

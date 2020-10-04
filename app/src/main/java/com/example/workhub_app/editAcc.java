@@ -91,44 +91,32 @@ public class editAcc extends Fragment {
                     txt3.setText(dataSnapshot.child("address").getValue().toString());
                     txt5.setText(dataSnapshot.child("phone").getValue().toString());
                     txt4.setText(dataSnapshot.child("email").getValue().toString());
-
                 }
                 else
                     Toast.makeText(getActivity(),"No Source to Display",Toast.LENGTH_SHORT).show();
             }
-
             @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
+            public void onCancelled(@NonNull DatabaseError databaseError) {}
         });
-
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
                 final String cname = txt1.getText().toString().trim();
                 final String ownerName = txt2.getText().toString().trim();
                 final String address = txt3.getText().toString().trim();
                 final String email = txt4.getText().toString().trim();
                 final String telNo = txt5.getText().toString().trim();
-
                 DatabaseReference dbUpdate = FirebaseDatabase.getInstance().getReference().child("Supplier_Details");
-
                 supEdit.setCompanyName(cname);
                 supEdit.setOwnerName(ownerName);
                 supEdit.setAddress(address);
                 supEdit.setEmail(email);
                 supEdit.setPhone(telNo);
-
                 dbUpdate.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(supEdit).addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
-
                         if(task.isSuccessful()){
                             Toast.makeText(getActivity(),"Changes Are Saved..!",Toast.LENGTH_SHORT).show();
-
                             FragmentTransaction frtMyAcc = getFragmentManager().beginTransaction();
                             frtMyAcc.replace(R.id.ediAcc, new myAccount()).commit();
                         }
@@ -137,13 +125,9 @@ public class editAcc extends Fragment {
                         }
                     }
                 });
-
-
             }
         });
-
     }
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {

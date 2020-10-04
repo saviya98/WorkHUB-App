@@ -78,19 +78,13 @@ public class addItemFr extends Fragment {
                 startActivityForResult(cameraIntent, CAMERA_REQUEST);
             }
         });
-
-
-
         addbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 dbf = FirebaseDatabase.getInstance().getReference().child("Item");
-
                  String itemN = iname.getText().toString().trim();
                  String description = ides.getText().toString().trim();
                  String  price = iprice.getText().toString().trim();
-
-
 
                 if(TextUtils.isEmpty(iname.getText().toString()))
                     Toast.makeText(getActivity(),"Please Enter a Item Name", Toast.LENGTH_SHORT).show();
@@ -98,58 +92,33 @@ public class addItemFr extends Fragment {
                     Toast.makeText(getActivity(),"Please Enter a description", Toast.LENGTH_SHORT).show();
                 if(TextUtils.isEmpty(iprice.getText().toString()))
                     Toast.makeText(getActivity(),"Please the price of the product", Toast.LENGTH_SHORT).show();
-
-
                 else{
                     //take inputs
                     item.setName(itemN);
                     item.setDescription(description);
                     item.setPrice(price);
-
-
                     //insert to db
                     dbf.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).push().setValue(item);
-
-
                     //call success msg
                     Toast.makeText(getActivity(),"Item is added..!",Toast.LENGTH_SHORT).show();
-
                     clearControlls();
-
                 }
-
             }
         });
-
-
     }
-
-
-
         @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-
         if(requestCode == CAMERA_REQUEST ){
-
             Bitmap photo = (Bitmap) data.getExtras().get("data");
             imageView.setImageBitmap(photo);
-
-
         }
     }
-
-
-
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_add_item, container, false);
-
         return v;
     }
-
 }
