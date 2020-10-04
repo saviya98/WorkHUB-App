@@ -6,7 +6,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
 
-    <de.hdodenhof.circleimageview.CircleImageView
+    <ImageView
         android:id="@+id/searchView"
         android:layout_width="93dp"
         android:layout_height="73dp"
@@ -14,8 +14,7 @@
         android:paddingBottom="3dp"
         app:srcCompat="@drawable/ic_proimage"
         tools:ignore="VectorDrawableCompat"
-        app:civ_border_width="2dp"
-        app:civ_border_color="#FF000000"/>
+        />
 
     <TextView
         android:id="@+id/saerHead"

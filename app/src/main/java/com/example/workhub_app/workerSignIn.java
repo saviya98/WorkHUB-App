@@ -40,8 +40,8 @@ public class workerSignIn extends AppCompatActivity {
                 String email = txtEmailSIn.getText().toString().trim();
                 String password = txtPassSIn.getText().toString().trim();
 
-                if(TextUtils.isEmpty(txtEmailSIn.getText().toString())){
-                    Toast.makeText(workerSignIn.this, "Email is Required", Toast.LENGTH_SHORT).show();
+                if(TextUtils.isEmpty(txtEmailSIn.getText().toString()) || !email.contains("@")){
+                    Toast.makeText(workerSignIn.this, "Email is Invalid", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if(TextUtils.isEmpty(txtPassSIn.getText().toString())){

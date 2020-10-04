@@ -25,6 +25,7 @@ public class wSearch extends Fragment {
 
     RecyclerView recyclerView;
     wSupRecAdapter wSupRecAdapter;
+    SearchView wSupSearch;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -41,12 +42,34 @@ public class wSearch extends Fragment {
         recyclerView = (RecyclerView) getActivity().findViewById(R.id.suplierWorkerRecycler);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
+        wSupSearch = getActivity().findViewById(R.id.searchWSupp);
+
         FirebaseRecyclerOptions<wSupModel> options =
                 new FirebaseRecyclerOptions.Builder<wSupModel>()
                         .setQuery(FirebaseDatabase.getInstance().getReference().child("Supplier_Details"),wSupModel.class).build();
 
         wSupRecAdapter = new wSupRecAdapter(options);
         recyclerView.setAdapter(wSupRecAdapter);
+
+        wSupSearch.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String q) {
+                search(q);
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String q) {
+                search(q);
+                return false;
+            }
+        });
+    }
+
+    private void search(String q){
+        FirebaseRecyclerOptions<wSupModel> options =
+                new FirebaseRecyclerOptions.Builder<wSupModel>()
+                        .setQuery(FirebaseDatabase.getInstance().getReference().child("Supplier_Details").orderByChild("companyName").startAt(q ).endAt(q+ "\uf8ff"),wSupModel.class).build();
     }
 
     @Override

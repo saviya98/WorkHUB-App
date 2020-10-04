@@ -110,8 +110,10 @@ public class Worker_Search_Preview extends AppCompatActivity {
     private void callMe(){
         String number = phone.getText().toString();
         if(number.trim().length()>0){
-            if(ContextCompat.checkSelfPermission(Worker_Search_Preview.this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED){
-                ActivityCompat.requestPermissions(Worker_Search_Preview.this,new String[]{Manifest.permission.CALL_PHONE},REQUEST_CALL);
+            if(ContextCompat.checkSelfPermission(Worker_Search_Preview.this, Manifest.permission.CALL_PHONE)
+                    != PackageManager.PERMISSION_GRANTED){
+                            ActivityCompat.requestPermissions(Worker_Search_Preview.this,new String[]
+                                    {Manifest.permission.CALL_PHONE},REQUEST_CALL);
             }
             else {
                 String dial = "tel:" + number;

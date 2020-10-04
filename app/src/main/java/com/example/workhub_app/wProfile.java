@@ -1,5 +1,6 @@
 package com.example.workhub_app;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -25,8 +26,9 @@ import com.google.firebase.database.ValueEventListener;
 
 public class wProfile extends Fragment {
     EditText name,email,phone,category;
-    Button update,delete,addWork;
+    Button update,delete,addWork,btnLogout;
     WorkerDetails worker;
+    FirebaseAuth fbA;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -64,6 +66,21 @@ public class wProfile extends Fragment {
 
         update = getActivity().findViewById(R.id.btnWorkerProfUpdate);
         delete = getActivity().findViewById(R.id.btnWorkerProfDelete);
+        btnLogout = getActivity().findViewById(R.id.btnWorkerLogOut);
+
+        fbA = FirebaseAuth.getInstance();
+
+        btnLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                fbA.signOut();
+                getActivity().finish();
+
+                Intent intent = new Intent();
+                intent.setClass(getActivity(),workerRegister.class);
+                getActivity().startActivity(intent);
+            }
+        });
 
 
         worker = new WorkerDetails();

@@ -10,6 +10,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
@@ -28,6 +29,7 @@ public class workerRegister extends AppCompatActivity {
     FirebaseAuth fbAuth;
     DatabaseReference database;
     WorkerDetails worker;
+    ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +48,8 @@ public class workerRegister extends AppCompatActivity {
         txtPass = findViewById(R.id.passwordSignUp);
         txtIndusType = findViewById(R.id.etIndustry);
 
+        progressBar = findViewById(R.id.progressBar);
+
         fbAuth = FirebaseAuth.getInstance();
 
         worker = new WorkerDetails();
@@ -60,8 +64,8 @@ public class workerRegister extends AppCompatActivity {
                 final String indus = txtIndusType.getText().toString().trim();
 
 
-                if(TextUtils.isEmpty(txtEmail.getText().toString())){
-                    Toast.makeText(workerRegister.this, "Email is Required", Toast.LENGTH_SHORT).show();
+                if(TextUtils.isEmpty(txtEmail.getText().toString()) || !email.contains("@")){
+                    Toast.makeText(workerRegister.this, "Email is Invalid", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 if(TextUtils.isEmpty(txtPass.getText().toString())){
@@ -84,6 +88,8 @@ public class workerRegister extends AppCompatActivity {
                     txtPhone.setError("Invalid Number");
                     return;
                 }
+
+                progressBar.setVisibility(View.VISIBLE);
 
                 fbAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override

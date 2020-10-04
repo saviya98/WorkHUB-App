@@ -96,16 +96,14 @@
             android:id="@+id/btnWorkerProfUpdate"
             android:layout_width="170dp"
             android:layout_height="49dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginStart="11dp"
             android:background="@drawable/button"
             android:fontFamily="@font/cairolight"
             android:text="@string/updateBtn"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
-            app:layout_constraintBaseline_toBaselineOf="@+id/btnWorkerProfDelete"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/btnWorkerProfDelete" />
+            app:layout_constraintBaseline_toBaselineOf="@+id/btnAddWorkInfo"
+            app:layout_constraintStart_toEndOf="@+id/btnAddWorkInfo" />
 
         <ImageView
             android:id="@+id/imageView"
@@ -126,14 +124,14 @@
             android:id="@+id/btnAddWorkInfo"
             android:layout_width="170dp"
             android:layout_height="49dp"
-            android:layout_marginTop="34dp"
+            android:layout_marginTop="36dp"
             android:background="@drawable/button"
             android:fontFamily="@font/cairolight"
             android:text="@string/btnAddWork"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintHorizontal_bias="0.12"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etCategoryW" />
 
@@ -150,6 +148,19 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/etPhoneW" />
+
+        <Button
+            android:id="@+id/btnWorkerLogOut"
+            android:layout_width="170dp"
+            android:layout_height="49dp"
+            android:layout_marginStart="11dp"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:background="@drawable/button"
+            android:fontFamily="@font/cairolight"
+            android:text="@string/workerlogOutbtn"
+            app:layout_constraintBaseline_toBaselineOf="@+id/btnWorkerProfDelete"
+            app:layout_constraintStart_toEndOf="@+id/btnWorkerProfDelete" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

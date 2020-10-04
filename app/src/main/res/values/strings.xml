@@ -104,7 +104,7 @@
     <string name="conPhoneSearchPreview">0774859621</string>
     <string name="conEmailHeadSearchPreview">Email</string>
     <string name="conEmailSearchPreview">abcsupp@gmail.com</string>
-    <string name="conAddressReqPreview">Email</string>
+    <string name="conAddressReqPreview">Address</string>
     <string name="conAddressDetailReqPreview">897/2 Park Rd, Malabe</string>
     <string name="conAddreSearchPreview">897/2 Park Rd, Malabe</string>
     <string name="contactWorkerBtn">Contact Me</string>
@@ -132,4 +132,6 @@ ipsm lorem Ilorem ipsmlorem ipsm.</string>
     <string name="approxWdate">Approx Date</string>
     <string name="wDailywage">Daily Wage</string>
     <string name="telWproj">Phone</string>
+    <string name="btnWad">view advertisments</string>
+    <string name="workerlogOutbtn">logout</string>
 </resources>

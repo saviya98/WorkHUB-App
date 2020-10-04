@@ -47,12 +47,12 @@ public class wSupRecAdapter extends FirebaseRecyclerAdapter<wSupModel,wSupRecAda
     }
 
     class wSupRecViewHolder extends RecyclerView.ViewHolder{
-        CircleImageView img;
+        ImageView img;
         TextView comName;
         public wSupRecViewHolder(@NonNull View itemView) {
             super(itemView);
 
-           img = (CircleImageView) itemView.findViewById(R.id.searchView);
+           img = (ImageView) itemView.findViewById(R.id.searchView);
            comName = (TextView)itemView.findViewById(R.id.saerHead);
         }
 

@@ -3,6 +3,7 @@ package com.example.workhub_app;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -23,6 +24,7 @@ public class wspSupItemRecAdapter extends FirebaseRecyclerAdapter<wSupItemModel,
     @Override
     protected void onBindViewHolder(@NonNull wSupItemRecViewHolder holder, int position, @NonNull wSupItemModel model) {
         holder.itemName.setText(model.getName());
+        holder.itemPrice.setText(model.getPrice());
         Glide.with(holder.img.getContext());
 
     }
@@ -30,20 +32,21 @@ public class wspSupItemRecAdapter extends FirebaseRecyclerAdapter<wSupItemModel,
     @NonNull
     @Override
     public wSupItemRecViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.single_search_raw,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.single_worker_item_recview,parent,false);
         return new wSupItemRecViewHolder(view);
     }
 
     class wSupItemRecViewHolder extends RecyclerView.ViewHolder{
-        TextView itemName;
-        CircleImageView img;
+        TextView itemName,itemPrice;
+        ImageView img;
         View view;
 
         public wSupItemRecViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            itemName = (TextView)itemView.findViewById(R.id.saerHead);
-            img = (CircleImageView) itemView.findViewById(R.id.searchView);
+            itemName = (TextView)itemView.findViewById(R.id.wokitemrecnamesinraw);
+            itemPrice = (TextView)itemView.findViewById(R.id.wokpriceTag);
+            img = (ImageView) itemView.findViewById(R.id.wokitenrecsinraw);
             view = itemView;
         }
     }
