@@ -2,14 +2,14 @@ package com.example.adverticepro;
 
 public class SupplierProjects {
 
-    private String supName;
+    private String supName; //initializing variable
     private String supNumber;
     private String supProDetails;
 
-    public SupplierProjects() {
+    public SupplierProjects() { //constructor
     }
 
-    public String getSupName() {
+    public String getSupName() {   //getters and setters
         return supName;
     }
 

@@ -11,7 +11,7 @@ import android.widget.Spinner;
 
 public class viewProject extends AppCompatActivity {
 
-    Button viewCustomer, viewWorker, viewSuplier;
+    Button viewCustomer, viewWorker, viewSuplier; //initializing variables
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

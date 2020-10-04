@@ -11,7 +11,7 @@ import android.widget.Spinner;
 
 public class newProject extends AppCompatActivity {
 
-    Button btnCustomer, btnWorker, btnSuplier;
+    Button btnCustomer, btnWorker, btnSuplier; //initializing variables
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,17 +26,17 @@ public class newProject extends AppCompatActivity {
 
 
 
-    public void newPro(View view){
+    public void newPro(View view){ //customer new project
         Intent cintent = new Intent(this, form.class);
         startActivity(cintent);
     }
 
-    public void supNewPro(View view){
+    public void supNewPro(View view){ //supplier new project
         Intent sintent = new Intent(this, Supplier_form.class);
         startActivity(sintent);
     }
 
-    public void workerNewPro(View view){
+    public void workerNewPro(View view){ //worker new project
         Intent wintent = new Intent(this, Worker_form.class);
         startActivity(wintent);
     }

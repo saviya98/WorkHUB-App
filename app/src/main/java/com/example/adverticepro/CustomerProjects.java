@@ -4,16 +4,16 @@ import android.widget.EditText;
 
 public class CustomerProjects {
 
-    private String cusName;
+    private String cusName; //initializing values
     private String cusNumber;
     private String proDetails;
 
-    public CustomerProjects() {
+    public CustomerProjects() { //constructor
     }
 
     public String getCusName() {
         return cusName;
-    }
+    }  //getters and setters
 
     public void setCusName(String cusName) {
         this.cusName = cusName;

@@ -9,7 +9,7 @@ import android.widget.Button;
 
 public class AdvertiseHome extends AppCompatActivity {
 
-    Button btnNewHome, btnViewHome, btnMyHome;
+    Button btnNewHome, btnViewHome, btnMyHome; //initializing variables
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,17 +21,17 @@ public class AdvertiseHome extends AppCompatActivity {
         btnMyHome = findViewById(R.id.btnMyHome);
     }
 
-    public void startNewHome(View view){
+    public void startNewHome(View view){ //starting new project
         Intent intent = new Intent(this, newProject.class);
         startActivity(intent);
     }
 
-    public void startMyHome(View view){
+    public void startMyHome(View view){ //viewing my own projects
         Intent intent = new Intent(this, myProjects.class);
         startActivity(intent);
     }
 
-    public void startViewHome(View view){
+    public void startViewHome(View view){ //viewing others specific projects
         Intent intent = new Intent(this, viewProject.class);
         startActivity(intent);
     }

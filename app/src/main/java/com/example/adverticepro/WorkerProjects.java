@@ -2,14 +2,14 @@ package com.example.adverticepro;
 
 public class WorkerProjects {
 
-    private String workerName;
+    private String workerName; //initializing variables
     private String workerNumber;
     private String workerProDetails;
 
-    public WorkerProjects() {
+    public WorkerProjects() { //constructor
     }
 
-    public String getWorkerName() {
+    public String getWorkerName() {  //getters and setters
         return workerName;
     }
 

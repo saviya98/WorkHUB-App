@@ -15,10 +15,10 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class form extends AppCompatActivity {
 
-    EditText fName, fNumber, fDetails;
+    EditText fName, fNumber, fDetails; //initializing variables
     Button sub;
     CustomerProjects cusPro; //object
-    DatabaseReference databaseReference;
+    DatabaseReference databaseReference; //database reference
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,30 +38,30 @@ public class form extends AppCompatActivity {
              @Override
             public void onClick(View view) {
 
-                 String name = fName.getText().toString().trim();
+                 String name = fName.getText().toString().trim(); //taking values to variables
                  String phone = fNumber.getText().toString().trim();
                  String proDiscrip = fDetails.getText().toString().trim();
 
 
 
-                if(TextUtils.isEmpty(fName.getText().toString())){
+                if(TextUtils.isEmpty(fName.getText().toString())){ //checking the field is empty or not
                     Toast.makeText(form.this, "Name is Required", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                else if(TextUtils.isEmpty(fNumber.getText().toString())){
+                else if(TextUtils.isEmpty(fNumber.getText().toString())){  //checking the field is empty or not
                     Toast.makeText(form.this, "Number is Required", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                else if(TextUtils.isEmpty(fDetails.getText().toString())){
+                else if(TextUtils.isEmpty(fDetails.getText().toString())){   //checking the field is empty or not
                     Toast.makeText(form.this, "Project Details are Required", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 else{
 
-
+                    //passing the data to database
 
                     databaseReference = FirebaseDatabase.getInstance().getReference().child("CustomerProjects");
                     cusPro.setCusName(name);
@@ -71,7 +71,7 @@ public class form extends AppCompatActivity {
 
 
 
-                    //dbref.child("cus1").setValue(cusPro);
+                    //message to show successfully inserted
 
                     Toast.makeText(form.this, "Data inserted successfully !", Toast.LENGTH_SHORT).show();
 
