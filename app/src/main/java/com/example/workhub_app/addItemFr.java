@@ -18,11 +18,16 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
+
+import java.io.ByteArrayOutputStream;
+import java.util.Base64;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -37,7 +42,7 @@ public class addItemFr extends Fragment {
     Button addbtn,addimage;
     DatabaseReference dbf;
     ImageView imageView;
-    private static final int GALLERY_REQUEST =1;
+
     Uri imgUrl;
     StorageReference reference;
 
@@ -57,7 +62,7 @@ public class addItemFr extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
 
-        reference = FirebaseStorage.getInstance().getReference().child("Item").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        reference = FirebaseStorage.getInstance().getReference();
         iname = getActivity().findViewById(R.id.itemName);
         ides = getActivity().findViewById(R.id.desI);
         iprice = getActivity().findViewById(R.id.priceI);
@@ -105,6 +110,7 @@ public class addItemFr extends Fragment {
                     //insert to db
                     dbf.child(FirebaseAuth.getInstance().getCurrentUser().getUid()).push().setValue(item);
 
+
                     //call success msg
                     Toast.makeText(getActivity(),"Item is added..!",Toast.LENGTH_SHORT).show();
 
@@ -128,8 +134,14 @@ public class addItemFr extends Fragment {
 
             Bitmap photo = (Bitmap) data.getExtras().get("data");
             imageView.setImageBitmap(photo);
+
+
         }
     }
+
+
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

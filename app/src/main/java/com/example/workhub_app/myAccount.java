@@ -32,6 +32,9 @@ import com.google.firebase.database.ValueEventListener;
  */
 public class myAccount extends Fragment {
 
+    FirebaseAuth firebaseAuth;
+    Button logout;
+
 
     private static final String TAG = "myAccount";
     @Override
@@ -39,6 +42,22 @@ public class myAccount extends Fragment {
         super.onActivityCreated(savedInstanceState);
 
         final TextView txt1,txt2,txt3,txt4,txt5;
+
+        firebaseAuth = FirebaseAuth.getInstance();
+        logout = getActivity().findViewById(R.id.logout);
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                firebaseAuth.signOut();
+                getActivity().finish();
+
+               Intent intent = new Intent();
+               intent.setClass(getActivity(),login.class);
+               getActivity().startActivity(intent);
+
+            }
+        });
 
 
         txt1 = getActivity().findViewById(R.id.txtC6);

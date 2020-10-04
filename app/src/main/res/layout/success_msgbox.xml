@@ -16,7 +16,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.127"
-        app:srcCompat="@drawable/congra" />
+        app:srcCompat="@drawable/congra"
+        tools:ignore="VectorDrawableCompat" />
 
     <TextView
         android:id="@+id/textView5"
