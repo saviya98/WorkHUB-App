@@ -12,7 +12,7 @@
         android:id="@+id/cust_create_myproj1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/cust_proj_add"
+        android:text="Update Your Project"
         android:textColor="@color/design_default_color_on_secondary"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"

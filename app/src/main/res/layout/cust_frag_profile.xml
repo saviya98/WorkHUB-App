@@ -162,7 +162,7 @@
         android:layout_width="251dp"
         android:layout_height="43dp"
         android:background="@drawable/button"
-        android:text="@string/btnaddproj"
+        android:text="My Projects"
         android:textColor="@color/design_default_color_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
